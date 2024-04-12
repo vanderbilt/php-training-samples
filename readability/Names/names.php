@@ -7,7 +7,7 @@ class name_service
     public function dataset($config)
     {
         // Check if user has permission to get the list.
-        // Only 3 and 4 should have access to the list.
+        // Only authenticated users and admins should have access to the list.
         if ($config[0] === 1 || $config[0] === 2) {
             return [];
         }
