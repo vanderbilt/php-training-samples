@@ -4,8 +4,8 @@ namespace Readability\Names;
 
 class NameRequest
 {
-    public int $permission;
-    public int $sortOrder;
+    private int $permission;
+    private int $sortOrder;
 
     const PERMIT_NONE = 1;
     const PERMIT_ALL = 2;
@@ -43,7 +43,8 @@ class NameRequest
 
     public function isNotPermitted(): bool
     {
-        return !$this->isPermitted();
+        return $this->getPermission() === self::PERMIT_NONE
+            || $this->getPermission() === self::PERMIT_ALL;
     }
 
     public function isSortedByName(): bool
