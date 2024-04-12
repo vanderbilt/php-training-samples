@@ -6,7 +6,7 @@
 
 ## Walk-through Questions
 * Is this a good file name for this class?  
-  * [PSR-4 Section 3.3](https://www.php-fig.org/psr/psr-4/)
+  * [PSR-4 Section 2 Item 3.3](https://www.php-fig.org/psr/psr-4/)
 * What about the class name? [PSR-1.1](https://www.php-fig.org/psr/psr-1/)
 * What would you change about the function name?
   * How do you know what this function does? 
@@ -18,4 +18,3 @@
   * What are these magic values? 
   * Where can I find a list of all the possible options? 
 * What do the private functions return?
-* 
