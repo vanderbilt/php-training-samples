@@ -3,7 +3,7 @@ erDiagram
     USER {
         string firstName
         string lastName
-        string password
         dateTime lastLogin
+        dateTime birthDate
     }
 ```
