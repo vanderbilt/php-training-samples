@@ -1,8 +1,8 @@
 ```mermaid
 erDiagram
     USER {
-        string firstName
-        string lastName
+        int id
+        string name
         dateTime lastLogin
         dateTime birthDate
     }

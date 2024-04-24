@@ -4,8 +4,8 @@ class User
 {
     private const DATE_TERMS_ADDED = '2024-01-01';
 
-    private ?string $firstName = null;
-    private ?string $lastName = null;
+    private int $id;
+    private string $name;
     private ?DateTime $lastLogin = null;
     private ?DateTime $birthDate = null;
 
@@ -15,13 +15,12 @@ class User
             && $this->lastLogin->format('Y-m-d') >= self::DATE_TERMS_ADDED;
     }
 
-    public function getFullName(): ?string
+
+    public function getFirstName(): ?string
     {
-        if (is_null($this->firstName && is_null($this->lastName))) {
-            return null;
-        }
-        return $this->firstName . " " . $this->lastName;
+        return strtok($this->name, ' ');
     }
+
 
     public function getUserAge(): ?int
     {
@@ -31,5 +30,38 @@ class User
         $today = new DateTime();
         $difference = $today->diff($this->birthDate);
         return (int) $difference->format('%y');
+    }
+
+
+
+    public function enrollInStudy($study)
+    {
+        if ($study[0] === 1 || $study[0] === 2) {
+            return null;
+        }
+        if (in_array($this->id, $study[1])) {
+            return $study;
+        }
+
+        // do some things to enroll user in study
+        return $study;
+    }
+
+    public function getUser(?int $id): User
+    {
+        if (is_null($id) || is_null($this->lookupUser($id))) {
+            return $this->createUser();
+        }
+        return $this->lookupUser($id);
+    }
+
+    private function lookupUser(int $id): User
+    {
+        return $this;
+    }
+
+    private function createUser(): User
+    {
+        return new User();
     }
 }
