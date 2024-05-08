@@ -8,11 +8,6 @@ Assume that on a certain date we added a new feature requiring users to agree to
 # Joined vs individual values
 Assume the system stores a name.  How do you get the first and last names? 
 
-# Returning Null 
-When expecting a string or int value, the code returns null. Calling methods will 
-then have to deal with the empty value, because there is no promise of a real 
-value. 
-
 # Design by Contract
 * Preconditions - The client guarantees that certain conditions are met before calling the method
 * Postcondition - The method guarantees conditions before returning to client
