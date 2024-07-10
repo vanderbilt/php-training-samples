@@ -12,6 +12,14 @@ class MessageService
         $this->utilities = new Utilities();
     }
 
+    /**
+     * This function sends a message
+     * @param $message - a message object containing the message details
+     * @param $type - either 'email' or 'sms'
+     * @param $logContent - boolean on whether to log the full content of the message (0 = no, 1 = yes)
+     * @return bool
+     * @throws \Exception
+     */
     public function sendMessage(MessageObject $message): bool
     {
         // This system does not currently support SMS, but is designed to allow it some day when we have the time to expand
